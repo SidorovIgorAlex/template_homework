@@ -2,20 +2,20 @@
 Назовите её university_db
 
 2. Таблица students:
-   student_id — уникальный идентификатор студента (PK),
-   first_name — имя,
-   last_name — фамилия,
-   birth_date — дата рождения,
-   group_name — название группы.
+       student_id — уникальный идентификатор студента (PK),
+       first_name — имя,
+       last_name — фамилия,
+       birth_date — дата рождения,
+       group_name — название группы.
    Таблица courses:
-   course_id — уникальный идентификатор курса (PK),
-   course_name — название курса,
-   lecturer — имя преподавателя.
+       course_id — уникальный идентификатор курса (PK),
+       course_name — название курса,
+       lecturer — имя преподавателя.
    Таблица enrollments (связь студенты ↔ курсы):
-   enrollment_id — уникальный идентификатор (PK),
-   student_id — ссылка на students.student_id,
-   course_id — ссылка на courses.course_id,
-   grade — оценка студента (0–10, контрольное ограничение CHECK).
+       enrollment_id — уникальный идентификатор (PK),
+       student_id — ссылка на students.student_id,
+       course_id — ссылка на courses.course_id,
+       grade — оценка студента (0–10, контрольное ограничение CHECK).
 
 3. Заполнение таблиц
    Вставить минимум 5–6 студентов, 3–5 курсов и несколько записей в enrollments,
