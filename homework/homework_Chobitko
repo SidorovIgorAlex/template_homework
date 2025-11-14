@@ -1,0 +1,113 @@
+ school.xset.lesson1_What_is_Java.homework;
+
+class Programmer {
+    // TODO: Создать класс Programmer с полями:
+    //       - String name - имя программиста
+    //       - int age - возраст программиста
+    //       - boolean isHasTask - наличие активной задачи
+    //       - int tiredness - уровень усталости
+    //       - boolean isKnowJava - знает ли программист Java
+    private String name
+    private int age
+    private boolean isHasTask
+    private int tiredness
+    private boolean isKnowJava
+
+    // TODO: Реализовать конструктор Programmer(String name, int age, boolean isHasTask, int tiredness, boolean isKnowJava):
+    //       - Инициализировать все поля переданными значениями
+    public Programmer(String name, int age, boolean isHasTask, int tiredness, boolean isKnowJava) {
+        this.name = name;
+        this.age = age;
+        this.isHasTask = isHasTask;
+        this.tiredness = tiredness;
+        this.isKnowJava = isKnowJava;
+    }
+
+    // TODO: Реализовать метод goWork():
+    //       - Если у программиста есть задача, вывести сообщение "[name] работает над задачей." и увеличить tiredness на 1
+    //       - Если задачи нет, вывести сообщение "[name] не имеет активных задач, и пошел ее получать" и вызвать getTask()
+    public void goWork() {
+        if (task != null && !task.isEmpty()) {
+            System.out.println(name + " работает над задачей.");
+            tiredness += 1;
+        } else {
+            System.out.println(name + " не имеет активных задач, и пошел ее получать");
+            getTask();
+        }
+    }
+
+    // TODO: Реализовать метод getTask():
+    //       - Установить isHasTask в true
+    public void getTask() {
+        this.isHasTask = true;
+    }
+
+    // TODO: Реализовать метод finishTask():
+    //       - Установить isHasTask в false
+    public void finishTask() {
+        this.isHasTask = false;
+    }
+    // TODO: Реализовать метод goSleep():
+    //       - Вывести сообщение "[name] идет спать."
+    //       - Уменьшить tiredness на 1
+
+    // TODO: Реализовать метод teachJava(Programmer anotherProgrammer):
+    //       - Если текущий программист знает Java, а другой нет:
+    //         - Обучить другого программиста (установить isKnowJava в true)
+    //         - Вывести сообщение "[name] обучил [anotherProgrammer.name] языку Java."
+    //       - Если текущий программист не знает Java, вывести "[name] не знает Java и не может обучить [anotherProgrammer.name]."
+    //       - Если второй программист уже знает Java, вывести "[anotherProgrammer.name] уже знает Java."
+    public void teachJava(Programmer anotherProgrammer) {
+        if (this.isKnowJava) {
+            if (!anotherProgrammer.isKnowJava) {
+                anotherProgrammer.isKnowJava = true;
+                System.out.println(this.name + " обучил " + anotherProgrammer.name + " языку Java.");
+            } else {
+                System.out.println(this.name + " не знает Java и не может обучить " + anotherProgrammer.name + ".");
+            } else{
+                System.out.println(anotherProgrammer.name + " уже знает Java.");
+            }
+        }
+
+        // TODO: Проверить отработку методов в main
+        //       - Создать двух программистов с разными характеристиками
+        //       - Проверить работу всех методов класса
+        public class Programmer {
+            String name;
+            boolean isKnowJava;
+
+            public Programmer(String name, boolean isKnowJava) {
+                this.name = name;
+                this.isKnowJava = isKnowJava;
+            }
+
+            public void teachJava(Programmer anotherProgrammer) {
+                if (this.isKnowJava) {
+                    if (!anotherProgrammer.isKnowJava) {
+                        anotherProgrammer.isKnowJava = true;
+                        System.out.println(this.name + " обучил " + anotherProgrammer.name + " языку Java.");
+                    } else {
+                        System.out.println(anotherProgrammer.name + " уже знает Java.");
+                    }
+                } else {
+                    System.out.println(this.name + " не знает Java и не может обучить " + anotherProgrammer.name + ".");
+                }
+            }
+
+            public void printInfo() {
+                System.out.println("Программист " + name + ", знает Java: " + isKnowJava);
+            }
+
+            public static void main(String[] args) {
+                Programmer p1 = new Programmer("Лена", true);
+                Programmer p2 = new Programmer("Вова", false);
+                System.out.println("До обучения:");
+                p1.printInfo();
+                p2.printInfo();
+                p1.teachJava(p2);
+                System.out.println("После обучения:");
+                p1.printInfo();
+                p2.printInfo();
+                p1.teachJava(p2);
+                 }
+        }
